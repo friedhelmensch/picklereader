@@ -1,10 +1,12 @@
-name: 6-minute-cron
+name: 2 hour cron job to update history
 on:
+  schedule:
+    - cron: "11 */2 * * *"
   workflow_dispatch:
 jobs:
   cron:
     runs-on: ubuntu-latest
     steps:
-      - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+      - name: Create new history entry
         run: |
           curl --location --request POST 'https://pickle-zeta.vercel.app/api/dai' --header 'Content-Type: application/json' --data-raw '{"address": "${{secrets.ADDRESS}}" }'
