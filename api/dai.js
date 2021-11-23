@@ -1,5 +1,5 @@
-const readDai = require("../lib/read-dai");
-const writeDai = require("../lib/write-dai");
+const readDai = require("../lib/readDaiBalance");
+const writeDai = require("../lib/writeBalanceHistoryEntry");
 
 module.exports = async (req, res) => {
   if (req.method === "GET") {
