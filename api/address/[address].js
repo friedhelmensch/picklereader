@@ -1,4 +1,4 @@
-const getHistory = require("../../lib/history");
+const { getHistory } = require("../../lib/history");
 
 module.exports = async (req, res) => {
   if (req.method === "GET") {
