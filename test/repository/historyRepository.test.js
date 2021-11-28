@@ -8,6 +8,8 @@ const {
 test("write entries and delete entries", async () => {
   const testAddress = "0xb5d85cbf7cb3ee0d56b3bb207d5fc4b82f43f511";
 
+  await deleteBalanceHistory(testAddress);
+
   const newEntry = await writeBalanceHistoryEntry(testAddress, 900);
   expect(newEntry.amount).toBe(900);
 
@@ -24,6 +26,8 @@ test("write entries and delete entries", async () => {
 
 test("write 3 entries 2 hours apart and get one in the middle", async () => {
   const testAddress = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045";
+
+  await deleteBalanceHistory(testAddress);
 
   const twentyOne = new Date(new Date().getTime() - 21 * 60 * 60 * 1000);
   const twentythree = new Date(new Date().getTime() - 23 * 60 * 60 * 1000);
