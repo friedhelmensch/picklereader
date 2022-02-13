@@ -7,9 +7,6 @@ jobs:
   cron:
     runs-on: ubuntu-latest
     steps:
-      - name: Create new history entry for ADDRESS1
-        run: |
-          curl --location --request POST 'https://pickle-zeta.vercel.app/api/dai' --header 'Content-Type: application/json' --data-raw '{"address": "${{secrets.ADDRESS}}" }'
       - name: Create new history entry for ADDRESS2
         run: |
           curl --location --request POST 'https://pickle-zeta.vercel.app/api/dai' --header 'Content-Type: application/json' --data-raw '{"address": "${{secrets.ADDRESS2}}" }'
